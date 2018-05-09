@@ -8,8 +8,8 @@ module CenitHome
       end
 
       def add_stylesheets
-        inject_into_file 'vendor/assets/stylesheets/cenit/frontend/all.css', " *= require cenit/frontend/cenit_home\n", before: %r{\*\/}, verbose: true
-        inject_into_file 'vendor/assets/stylesheets/cenit/backend/all.css', " *= require cenit/backend/cenit_home\n", before: %r{\*\/}, verbose: true
+        # inject_into_file 'vendor/assets/stylesheets/cenit/all.css', " *= require cenit/cenit_home\n", before: %r{\*\/}, verbose: true
+        # inject_into_file 'vendor/assets/stylesheets/cenit/all.css', " *= require cenit/cenit_home\n", before: %r{\*\/}, verbose: true
       end
     end
   end
