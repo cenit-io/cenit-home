@@ -16,6 +16,6 @@ end
 
 desc 'Generates a dummy app for testing'
 task :test_app do
-  ENV['LIB_NAME'] = 'cenit_home'
+  ENV['LIB_NAME'] = 'cenit/home'
   Rake::Task['extension:test_app'].invoke
 end
