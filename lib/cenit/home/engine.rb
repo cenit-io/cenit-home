@@ -4,7 +4,7 @@ module Cenit
       isolate_namespace Cenit::Home
 
       initializer :assets do |config|
-        Rails.application.config.assets.precompile << %w( cenit/**/* )
+        Rails.application.config.assets.precompile += %w( cenit/**/* )
       end
     end
   end

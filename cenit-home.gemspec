@@ -21,4 +21,6 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   s.add_development_dependency 'haml-rails'
+  s.add_development_dependency 'sass-rails'
+  s.add_dependency 'bootstrap-sass'
 end
