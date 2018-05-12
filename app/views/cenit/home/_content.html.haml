@@ -7,28 +7,28 @@
           %a.close{href: '#', :'data-dismiss' => "alert"} &times;
           = value
   = cache 'home', expires_in: 1.day do
-    = render partial: 'rails_admin/main/home/sliders'
+    = render partial: 'cenit/home/sliders'
     <!-- INTRO -->
-    = render partial: 'rails_admin/main/home/intro'
+    = render partial: 'cenit/home/intro'
     <!-- SUBDOMAINS -->
-    = render partial: 'rails_admin/main/home/subdomains'
+    = render partial: 'cenit/home/subdomains'
     <!-- SERVICES -->
-    = render partial: 'rails_admin/main/home/services'
+    = render partial: 'cenit/home/services'
     - if (ENV['PUBLIC_APIS'] || true)
       <!-- APP INETGRATIONS -->
-      = render partial: 'rails_admin/main/home/app_integrations'
+      = render partial: 'cenit/home/app_integrations'
     <!-- SEARCH APPS -->
-    = render partial: 'rails_admin/main/home/search_apps'
+    = render partial: 'cenit/home/search_apps'
     <!-- FEATURES-->
-    = render partial: 'rails_admin/main/home/features'
+    = render partial: 'cenit/home/features'
     - if (ENV['SHOW_PRICES'] || false)
       <!-- PRICING-->
-      = render partial: 'rails_admin/main/home/pricing'
+      = render partial: 'cenit/home/pricing'
     - if (ENV['SHOW_PAYMENT_OPTIONS'] || false)
       <!-- PAYMENT OPTIONS-->
-      = render partial: 'rails_admin/main/home/payment_options'
+      = render partial: 'cenit/home/payment_options'
     <!-- FOOTER-->
-    = render partial: 'rails_admin/main/home/footer'
+    = render partial: 'cenit/home/footer'
   <!-- GO UP ARROW-->
   = link_to '', id: 'go-up',class:'from-bottom scroll', data: {link: 'top'} do
     %i.fa.fa-arrow-up
