@@ -4,9 +4,9 @@
       .header
         .col-md-12
           %h3
-            ='Pricing Plans Alternative'
+            ='Pricing Plans'
           %p
-            ='Choose the pricing that fits your business needs. Questions?'
+            = 'Free to start. Easy. Flexible. Scalable. Questions?'
             = link_to 'Contact us', '#',class: 'contact-modal'
       .row.charts
         .col-md-4
@@ -16,49 +16,48 @@
             .specs
               .spec
                 %span.variable
-                  = 1
-                = 'Tenant'
+                  = '2.5K'
+                = 'Execution Tasks'
               .spec
                 %span.variable
-                  ='Shared Collections'
+                  = '20 min'
+                = 'Polling Cycle'
               .spec
                 %span.variable
-                  ='500'
-                = 'non commerce transaction'
-              .spec
-                %span.variable
-                  ='50'
-                = 'commerce transaction'
+                  = '7 days'
+                = 'Message Notifications'
               .spec
                 %span.variable
                   ='Community'
                 ='Slack Channel'
+              .spec
+                = 'No Credit Card Required'
             =link_to '#', class:'button go-sign-in' do
               %span='Start free'
         .col-md-4
           .chart.featured
-            = image_tag 'cenit/home/ribbon.png', class: 'popular', title: 'Extra Options'
+            = image_tag 'cenit/home/ribbon.png', class: 'popular', title: 'Pay As You Go'
             %span.ribbon-text
-              ='Extra Options'
+              = 'Pay As You Go'
             .plan-name
-              ='Variable'
+              ='Small Business'
             .specs
               .spec
                 %span.variable
-                  ='Included'
-                ='free options'
+                  = '$15'
+                = 'per 5K Execution Tasks'
               .spec
                 %span.variable
-                  ='$15 per additional'
-                ='tenant'
+                  = '10 min'
+                = 'Polling Cycle'
               .spec
                 %span.variable
-                  ='$0.5 per 100'
-                ='non commerce transaction'
+                  = '30 days'
+                = 'Message Notifications'
               .spec
                 %span.variable
-                  ='$0.5 per'
-                ='commerce transaction'
+                  = '5 hours'
+                = 'Assisted Setup'
               .spec
                 %span.variable
                   ='Private'
@@ -68,23 +67,27 @@
         .col-md-4
           .chart.last
             .plan-name
-              ='Custom Enterprise'
+              = 'Enterprise'
             .specs
               .spec
                 %span.variable
-                  ='Unlimited'
-                ='tenants'
+                  = 'Custom'
+                = 'Execution Tasks'
               .spec
                 %span.variable
-                  ='SaaS'
-                ='management'
+                  = '5 min'
+                = 'Polling Cycle'
               .spec
                 %span.variable
-                  ='Custom'
-                ='integrations'
+                  = 'Custom'
+                = 'Message Notifications'
               .spec
                 %span.variable
-                  ='Development'
-                ='services'
+                  = 'Custom'
+                = 'Development Services'
+              .spec
+                %span.variable
+                  = 'Dedicated'
+                = 'Support'
             =link_to '#', class:'button contact-modal' do
-              %span='Contact us'
+              %span='Request a quote'
