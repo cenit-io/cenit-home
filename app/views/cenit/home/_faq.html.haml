@@ -1,0 +1,36 @@
+%section#faq.gray
+  .container
+    .row
+      #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+        .panel.panel-default
+          #headingOne.panel-heading{:role => "tab"}
+            %h4.panel-title
+              %a{"aria-controls" => "collapseOne", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseOne", :role => "button"}
+                What is an execution task?
+          #collapseOne.panel-collapse.collapse.in{"aria-labelledby" => "headingOne", :role => "tabpanel"}
+            .panel-body
+              An execution task is a successful execution of an action that corresponds to a background job, e.g: flow execution, algorithm execution.
+        .panel.panel-default
+          #headingTwo.panel-heading{:role => "tab"}
+            %h4.panel-title
+              %a.collapsed{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseTwo", :role => "button"}
+                What happens if I exceed the execution task quota?
+          #collapseTwo.panel-collapse.collapse{"aria-labelledby" => "headingTwo", :role => "tabpanel"}
+            .panel-body
+              Free plan: Task executions after the quota is reached are rejected. Small Business plan: You are automatically granted another 5K execution task bucket once you exceed your current one. This ensures that you always have the capacity to manage customer demand.
+        .panel.panel-default
+          #headingThree.panel-heading{:role => "tab"}
+            %h4.panel-title
+              %a.collapsed{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseThree", :role => "button"}
+                When will my credit card be charged?
+          #collapseThree.panel-collapse.collapse{"aria-labelledby" => "headingThree", :role => "tabpanel"}
+            .panel-body
+              The billing cycle starts when you upgrade to the Small Business plan. When you upgrade, your credit card will be charged $15 for the first bucket of 5K execution tasks. Subsequently, your credit card will be charged at the start of each new billing cycle every 30 days. For example, you sign up for the Small Business plan on June 5th. Going forward, your billing cycles will end 30 days after June 5th. Let's say during this billing cycle that started on June 5th, you were awarded additional 5K execution tasks on the 10th, 15th and the 21st. At the beginning of the next billing cycle, July 5th, your credit card will be charged $45 dollars (3 x $15 = $45) for these 3 buckets of 5K execution tasks that were used. In addition, because a new billing cycle has started, you are automatically awarded a new bucket of 5K execution tasks that you can use right away. The invoice would therefore reflect a total charge of $60 ($45 + $15).
+        .panel.panel-default
+          #headingFour.panel-heading{:role => "tab"}
+            %h4.panel-title
+              %a.collapsed{"aria-controls" => "collapseFour", "aria-expanded" => "false", "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#collapseFour", :role => "button"}
+                Does the Small Business plan rollover unused execution tasks?
+          #collapseFour.panel-collapse.collapse{"aria-labelledby" => "headingFour", :role => "tabpanel"}
+            .panel-body
+              No. All execution tasks should be consumed in the current billing cycle. At the beginning of a new billing cycle, you will automatically granted access to a new 5K execution tasks bucket.
