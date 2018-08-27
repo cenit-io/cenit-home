@@ -2134,6 +2134,13 @@ cenit = function ($) {
             // Register events handlers
             registerEvents();
 
+            switch (doStartTour) {
+                case 'user':
+                    startTour(user_tour);
+                    break;
+                case 'anonymous':
+                    startTour(anonymous_tour);
+            }
         };
 
     return {initModule: initModule};
