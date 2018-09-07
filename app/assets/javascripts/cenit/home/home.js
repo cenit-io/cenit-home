@@ -2134,7 +2134,7 @@ cenit = function ($) {
             // Register events handlers
             registerEvents();
 
-            switch (doStartTour) {
+            switch (window.doStartTour) {
                 case 'user':
                     startTour(user_tour);
                     break;
