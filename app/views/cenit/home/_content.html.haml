@@ -35,6 +35,6 @@
   <!-- GO UP ARROW-->
   = link_to '', id: 'go-up',class:'from-bottom scroll', data: {link: 'top'} do
     %i.fa.fa-arrow-up
-  - tour = TourTrack.show_tour?(request.remote_ip, User.current) && (User.current ? 'user' : 'anonymous')
+  - tour = User.current.present? && TourTrack.show_tour?(request.remote_ip, User.current)
   :javascript
-    var doStartTour = '#{tour}';
+    var doStartTour = #{tour};

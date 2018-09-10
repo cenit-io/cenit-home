@@ -11,16 +11,18 @@
     %i.fa.fa-fw.fa-star{title:'Features'}
     %span='Features'
 %li.first
-  - anonymous = current_user ? 'false' : 'true'
-  - dashboard_root = @action.is_a?(RailsAdmin::Config::Actions::Dashboard) && params[:group].blank?
-
-  %a.take-tour{'href'=> '#', data:{anonymous: anonymous , 'dashboard-root': dashboard_root.to_s}}
-    %i.fa.fa-fw.fa-bus{title: t('admin.misc.tour')}
-    %span=t('admin.misc.tour')
-%li
   =link_to "#{ENV['API_DOC_URL'] || 'https://cenit-io.github.io'}/openapi/", target: '_blank' do
     %i.fa.fa-fw.fa-send-o{title: t('admin.misc.api')}
     %span=t('admin.misc.api')
+
+- if User.current
+  %li
+    - dashboard_root = @action.is_a?(RailsAdmin::Config::Actions::Dashboard) && params[:group].blank?
+
+    %a.take-tour{'href'=> '#', data:{'dashboard-root': dashboard_root.to_s}}
+      %i.fa.fa-fw.fa-bus{title: t('admin.misc.tour')}
+      %span=t('admin.misc.tour')
+
 %li
   =link_to "#{ENV['DOCS_URL'] || 'https://cenit-io.github.io'}/docs", target: '_blank' do
     %i.fa.fa-fw.fa-file-text{title: t('admin.misc.docs')}
@@ -30,7 +32,7 @@
     %i.fa.fa-fw.fa-newspaper-o{title: t('admin.misc.blog')}
     %span=t('admin.misc.blog')
 %li
-  =link_to (ENV['SLACK_INVITATION'] || 'http://cenit-slack.herokuapp.com'), target: '_blank' do
+  =link_to (ENV['SLACK_INVITATION'] || 'http://cenit-slack.herokuapp.com'), target: '_blank', name: 'l_join_slack' do
     %i.fa.fa-fw.fa-slack{title: 'join our slack'}
     %span='Join our Slack'
 %li

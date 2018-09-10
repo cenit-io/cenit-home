@@ -23,16 +23,16 @@ cenit = function ($) {
 
         tour_steps = {
             'welcome': {
-                title: "Welcome to cenit.io!",
-                content: "Thanks for visiting us! Click 'Next' to start the tour.",
+                title: "Welcome to CENIT",
+                content: "Let's go through this <strong>quick overview</strong> to see the basics of Cenit that bring you the tools to build <strong>great integrations</strong> or perhaps anything you have in mind!",
                 orphan: true,
                 onNext: function () {
                     openNavigator();
                 }
             },
             'collections': {
-                title: "Browse our Collections",
-                content: "Install any available collection in the blink of an eye, and create your own",
+                title: "Browse Collections",
+                content: "Check if <strong>what you need</strong> is already here. Collections groups out of the box configurations someone <strong>already done</strong> so you don't need to start from scratch.",
                 element: "#g_integrations",
                 placement: "top",
                 onShow: function () {
@@ -46,8 +46,8 @@ cenit = function ($) {
                 }
             },
             'data': {
-                title: "Define data",
-                content: "Create your schemas and data types",
+                title: "Define your data",
+                content: "Structure your storage by defining <strong>data types</strong> and <strong>validators</strong>. You can use <strong>JSON</strong> or <strong>XML</strong> schemas to structure your data or simple use <strong>Files</strong> to store data not structure at all.",
                 element: "#l_definitions",
                 placement: "right",
                 onShow: function () {
@@ -62,7 +62,7 @@ cenit = function ($) {
             },
             'store': {
                 title: "Store data",
-                content: "Store your objects",
+                content: "Store your data as structured <strong>objects</strong> or <strong>files</strong>. You have full control on how data is persisted and validated. A <strong>REST API</strong> is <strong>automatically</strong> available and with <strong>custom actions</strong> you can also define.",
                 element: "#l_objects",
                 placement: "right",
                 onShow: function () {
@@ -77,7 +77,7 @@ cenit = function ($) {
             },
             'connections': {
                 title: "Setup your endpoints",
-                content: "Register connections and webhooks",
+                content: "Register the <strong>connections</strong> and <strong>resources</strong> of your endpoints. Several protocols are supported like <strong>HTTP[S]</strong>, <strong>FTP</strong>, <strong>SFTP</strong> or <strong>SCP</strong>. Attach parameters and headers to your connections and resources or you can even define <strong>templates</strong> to setup them <strong>dynamically</strong>.",
                 element: "#l_connectors",
                 placement: "left",
                 onShow: function () {
@@ -90,10 +90,57 @@ cenit = function ($) {
                     toggle_collapse(that);
                 }
             },
+            'open_api_directory': {
+                title: "Looking for an API?",
+                content: "Besides our many pre-configure connectors find much more at the <strong>OpenAPI Directory</strong> with thousand of endpoints, connectors and resources.",
+                element: "#l_open_api_directory",
+                placement: "left",
+                onShow: function () {
+                    that = this.element;
+                    toggle_collapse(that);
+                    openNavigator();
+                },
+                onHide: function () {
+                    that = this.element;
+                    toggle_collapse(that);
+                }
+            },
             'transforms': {
-                title: "Transform and dispatch",
-                content: "Send your data away or pull it from a remote endpoint or simply translate it from one data type to another",
+                title: "Data Transformation",
+                content: "Transforms your data in many ways using <strong>templates</strong>, <strong>parsers</strong>, <strong>updaters</strong> and <strong>mappings</strong> for any format you need, including populars ones like <strong>HTML</strong>, <strong>XML</strong>, <strong>JSON</strong>, <strong>PDF</strong>, <strong>X12</strong> and so on.",
                 element: "#g_transforms",
+                placement: "right",
+                onShow: function () {
+                    that = this.element;
+                    toggle_collapse(that);
+                    openNavigator();
+                },
+                onHide: function () {
+                    that = this.element;
+                    toggle_collapse(that);
+                }
+
+            },
+            'workflows': {
+                title: "Make your data flows",
+                content: "Combine your definitions, connectors and transformations to make your <strong>data flows</strong> in any way you need. Pull or send data from one or <strong>multiple endpoints</strong> at the same time or in a synchronous way, <strong>schedule</strong> them or define <strong>events</strong> based on data conditions.",
+                element: "#g_workflows",
+                placement: "right",
+                onShow: function () {
+                    that = this.element;
+                    toggle_collapse(that);
+                    openNavigator();
+                },
+                onHide: function () {
+                    that = this.element;
+                    toggle_collapse(that);
+                }
+
+            },
+            'compute': {
+                title: "Need to break your limits?",
+                content: "Type your own <strong>algorithms</strong> and build an <strong>App</strong>. Separate your concerns, leave the tricky ones on Cenit and get focus on what's more important. Easy integrate your world apps using a <strong>REST</strong> and <strong>customizable</strong> API, <strong>authorize</strong> and handle your own users  out of the box using the <strong>OAuth 2.0</strong> protocol against third-party providers.",
+                element: "#g_compute",
                 placement: "right",
                 onShow: function () {
                     that = this.element;
@@ -122,20 +169,14 @@ cenit = function ($) {
                 }
             },
             'task': {
-                title: "Tasks",
-                content: "Check your tasks",
+                title: "Your tasks run on the background",
+                content: "Quick access to your <strong>tasks</strong> to see what are you executing or what is already done!",
                 element: "#action-tasks",
                 placement: "bottom"
             },
-            'authentications': {
-                title: "Authentications",
-                content: "Authentications here",
-                element: "#action-auth",
-                placement: "bottom"
-            },
             'notifications': {
-                title: "Get notified",
-                content: "Different kinds of notifications",
+                title: "What's happening? Don't miss it...",
+                content: "<strong>Notifications</strong> for anything happening can be registered here. Depending on your <strong>notification level</strong> there is a set of events that are registered <strong>by default</strong>, but you can also create your owns.",
                 element: "#action-notify",
                 placement: "bottom"
             },
@@ -169,6 +210,19 @@ cenit = function ($) {
                         $('#sign-in-link').trigger('click');
                     }
                 }
+            },
+            'join_slack': {
+                title: "Are you lost?",
+                content: "Join our Slack <strong>support channel</strong> and ask for anything you need!",
+                element: "#l_join_slack",
+                placement: "left",
+                onShow: function () {
+                    that = this.element;
+                    toggle_collapse(that);
+                    if (!$("#nav-drawer").hasClass('open')) {
+                        $('#nav-drawer-toggle').trigger('click');
+                    }
+                }
             }
         },
 
@@ -180,7 +234,10 @@ cenit = function ($) {
                 tour_steps.data,
                 tour_steps.store,
                 tour_steps.connections,
+                tour_steps.open_api_directory,
                 tour_steps.transforms,
+                tour_steps.workflows,
+                tour_steps.compute,
                 tour_steps.security,
                 tour_steps.try
             ]
@@ -194,7 +251,10 @@ cenit = function ($) {
                 tour_steps.data,
                 tour_steps.store,
                 tour_steps.connections,
+                tour_steps.open_api_directory,
                 tour_steps.transforms,
+                tour_steps.workflows,
+                tour_steps.compute,
                 tour_steps.security,
                 tour_steps.try,
                 tour_steps.services
@@ -209,12 +269,14 @@ cenit = function ($) {
                 tour_steps.data,
                 tour_steps.store,
                 tour_steps.connections,
+                tour_steps.open_api_directory,
                 tour_steps.transforms,
+                tour_steps.workflows,
+                tour_steps.compute,
                 tour_steps.security,
                 tour_steps.task,
-                tour_steps.authentications,
                 tour_steps.notifications,
-                tour_steps.services
+                tour_steps.join_slack
             ]
         }),
 
@@ -226,12 +288,14 @@ cenit = function ($) {
                 tour_steps.data,
                 tour_steps.store,
                 tour_steps.connections,
+                tour_steps.open_api_directory,
                 tour_steps.transforms,
+                tour_steps.workflows,
+                tour_steps.compute,
                 tour_steps.security,
                 tour_steps.task,
-                tour_steps.authentications,
                 tour_steps.notifications,
-                tour_steps.rest_apis
+                tour_steps.join_slack
             ]
         }),
 
@@ -565,7 +629,8 @@ cenit = function ($) {
             });
         },
 
-        startTour = function (tour) {
+        startTour = function () {
+            var tour = arguments[0] || user_tour_at_home;
             // Initialize the tour
             tour.init();
             // Start the tour
@@ -1563,25 +1628,7 @@ cenit = function ($) {
 
             $('.take-tour').off().click(function (e) {
                 e.preventDefault();
-                var $this = $(this),
-                    anonymous = $this.attr('data-anonymous'),
-                    dashboard_root = $this.attr('data-dashboard-root');
-                if (anonymous == 'true') {
-                    if (dashboard_root == 'true') {
-                        startTour(anonymous_tour_at_home)
-
-                    } else {
-                        startTour(anonymous_tour)
-                    }
-                }
-                else {
-                    if (dashboard_root == 'true') {
-                        startTour(user_tour_at_home)
-                    } else {
-                        startTour(user_tour)
-                    }
-                }
-
+                startTour();
             });
             $('a#contact_us').off().click(function (e) {
                 e.preventDefault();
@@ -2134,12 +2181,8 @@ cenit = function ($) {
             // Register events handlers
             registerEvents();
 
-            switch (window.doStartTour) {
-                case 'user':
-                    startTour(user_tour);
-                    break;
-                case 'anonymous':
-                    startTour(anonymous_tour);
+            if (window.doStartTour) {
+                startTour();
             }
         };
 
