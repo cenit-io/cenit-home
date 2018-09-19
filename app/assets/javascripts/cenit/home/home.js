@@ -226,43 +226,8 @@ cenit = function ($) {
             }
         },
 
-        anonymous_tour = new Tour({
-            name: 'anonymous',
-            steps: [
-                tour_steps.welcome,
-                tour_steps.collections,
-                tour_steps.data,
-                tour_steps.store,
-                tour_steps.connections,
-                tour_steps.open_api_directory,
-                tour_steps.transforms,
-                tour_steps.workflows,
-                tour_steps.compute,
-                tour_steps.security,
-                tour_steps.try
-            ]
-        }),
-
-        anonymous_tour_at_home = new Tour({
-            name: 'anonymous_at_home',
-            steps: [
-                tour_steps.welcome,
-                tour_steps.collections,
-                tour_steps.data,
-                tour_steps.store,
-                tour_steps.connections,
-                tour_steps.open_api_directory,
-                tour_steps.transforms,
-                tour_steps.workflows,
-                tour_steps.compute,
-                tour_steps.security,
-                tour_steps.try,
-                tour_steps.services
-            ]
-        }),
-
         user_tour_at_home = new Tour({
-            name: 'user_at_home',
+            name: 'tour',
             steps: [
                 tour_steps.welcome,
                 tour_steps.collections,
@@ -277,26 +242,8 @@ cenit = function ($) {
                 tour_steps.task,
                 tour_steps.notifications,
                 tour_steps.join_slack
-            ]
-        }),
-
-        user_tour = new Tour({
-            name: 'user',
-            steps: [
-                tour_steps.welcome,
-                tour_steps.collections,
-                tour_steps.data,
-                tour_steps.store,
-                tour_steps.connections,
-                tour_steps.open_api_directory,
-                tour_steps.transforms,
-                tour_steps.workflows,
-                tour_steps.compute,
-                tour_steps.security,
-                tour_steps.task,
-                tour_steps.notifications,
-                tour_steps.join_slack
-            ]
+            ],
+            storage: window.localStorage
         }),
 
         slideshow = {
