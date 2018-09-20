@@ -48,8 +48,6 @@
             = f.email_field :email, autofocus: true, class: 'form-control', placeholder: t('admin.placeholders.email')
           .field.text-justify
             = f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: t('admin.placeholders.password')
-          .field.text-justify
-            = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control', placeholder: t('admin.placeholders.pass_confirm')
           .recaptcha
           = recaptcha_tags('data-theme': 'dark') if ENV['ENABLE_RERECAPTCHA'].to_b && ENV['RECAPTCHA_SITE_KEY'].present?
           .actions.clearfix

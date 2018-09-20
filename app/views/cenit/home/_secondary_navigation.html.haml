@@ -109,8 +109,6 @@
               = f.email_field :email, autofocus: true, class: 'form-control', placeholder: t('admin.placeholders.email')
             .field.text-justify
               = f.password_field :password, autocomplete: 'off', class: 'form-control', placeholder: t('admin.placeholders.password')
-            .field.text-justify
-              = f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control', placeholder: t('admin.placeholders.pass_confirm')
             .actions.clearfix
               %button.btn.btn-primary.pull-right{type:'submit'}
                 =t('admin.registration.submit')
