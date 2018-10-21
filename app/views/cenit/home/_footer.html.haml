@@ -41,7 +41,7 @@
               %i.fa.fa-folder-open-o{title: t('admin.misc.directory')}
               %span=t('admin.misc.directory')
           %li
-            =link_to "#{ENV['PORTAL_URL'] || 'https://cenit.io'}/terms_of_service", target: '_blank' do
+            =link_to "#{Cenit.homepage}/terms" do
               %i.fa.fa-institution{title: t('admin.misc.terms')}
               %span=t('admin.misc.terms')
       .col-sm-3.col-sms-6.menu

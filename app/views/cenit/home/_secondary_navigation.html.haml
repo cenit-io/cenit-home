@@ -29,7 +29,7 @@
           %li.divider{role:'separator'}
           .actions.clearfix
             %li.terms.pull-left
-              %small= link_to t('admin.misc.terms'), "#{ENV['PORTAL_URL'] || 'https://cenit.io'}/terms_of_service", class: 'text-muted', target: '_blank'
+              %small= link_to t('admin.misc.terms'), "#{Cenit.homepage}/terms", class: 'text-muted'
             - if logout_path.present?
               %li.pull-right= link_to t('admin.misc.log_out'), logout_path, method: logout_method, class: 'btn btn-xs btn-danger'
 
@@ -116,7 +116,7 @@
             .terms.text-left
               %small.text-muted
                 =t('admin.registration.terms_preface')
-                =link_to "#{ENV['PORTAL_URL'] || 'https://cenit.io'}/terms_of_service", target: '_blank' do
+                =link_to "#{Cenit.homepage}/terms" do
                   %span=t('admin.misc.terms')
 
           = form_for(resource, as: resource_name, url: password_path(resource_name), html: {id: 'no-pass-form', class: 'local'}) do |f|

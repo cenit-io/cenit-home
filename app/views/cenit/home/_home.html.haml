@@ -1,2 +1,6 @@
 = render partial: 'cenit/home/header'
-= render partial: 'cenit/home/content'
+- if request.path == '/terms'
+  .padding{style: 'padding-top:50px'}
+    = render partial: 'cenit/home/terms'
+- else
+  = render partial: 'cenit/home/content'

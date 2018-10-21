@@ -17,7 +17,7 @@
         %li.divider{role:'separator'}
         .actions.clearfix
           %li
-            = link_to t('admin.misc.terms'), "#{ENV['PORTAL_URL'] || 'https://cenit.io'}/terms_of_service", class: 'text-muted', target: '_blank'
+            = link_to t('admin.misc.terms'), "#{Cenit.homepage}/terms", class: 'text-muted'
           %li.divider{role:'separator'}
           %li.text-center
             = link_to t('admin.misc.log_out'), logout_path, method: logout_method, class: 'btn btn-danger'
