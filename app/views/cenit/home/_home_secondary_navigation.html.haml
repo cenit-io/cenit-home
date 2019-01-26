@@ -11,23 +11,19 @@
   .a.navbar-btn
     =link_to t('admin.registration.new'), new_registration_path(User), class: 'btn btn-primary', id: 'sign-in-link', style: 'padding-right:10px'
 %ul#sign-drawer.drawer.user-auth
-  #sign-links.holder
+  = render partial: 'cenit/home/shared/socials'
+  #sign-links.holder{style: 'display:flex;flex-direction:column;height:unset'}
     .form-top
       =t('admin.session.new_title')
     - resource = User.new
     - resource_name = :user
-    = form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form', class: 'form-inline' }) do |f|
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form', class: 'form-inline', style: 'margin:unset' }) do |f|
       - if (return_to = params[:return_to])
         - f.hidden_field :return_to, value: return_to
       = f.check_box :remember_me, style: 'display:none', value: '1', checked: 'checked'
-      = f.button class: 'btn btn-lg soc-btn soc-github', name: 'with', value: 'github' do
-        %i{class:'fa fa-fw fa-github'}
-      = f.button class: 'btn btn-lg soc-btn soc-google', name: 'with', value: 'google' do
-        %i{class:'fa fa-fw fa-google'}
-      = f.button class: 'btn btn-lg soc-btn soc-facebook', name: 'with', value: 'facebook' do
-        =image_tag 'brands/flogo-HexRBG-Wht-58.svg', style: 'height:24px'
+      = render partial: 'devise/social_buttons', locals: { form: f }
     - unless (ENV['UNABLE_SIGN_IN_AND_SIGN_UP_DEVISE'] || false).to_b
-      .form-option
+      .form-option{style: 'margin:0'}
         =t('admin.misc.or')
       .local-forms
         = form_for(resource, as: resource_name, url: session_path(resource_name), html: {id: 'do-user-form', class: 'local active'}) do |f|
@@ -73,7 +69,6 @@
               =t('admin.session.register')
             %a#do-user.btn.btn-xs.pull-left{href: '#'}
               =t('admin.registration.sign')
-  = render partial: 'cenit/home/shared/socials'
 
 %ul.nav.navbar-nav.navbar-right#home-nav
   %li.dropdown
