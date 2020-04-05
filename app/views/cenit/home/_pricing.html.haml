@@ -4,87 +4,93 @@
       .header
         .col-md-12
           %h3
-            ='Pricing Plans'
+            ='MONTHLY PRICING PLANS'
           %p
-            = 'Free to start. Easy. Flexible. Scalable. Questions?'
+            = '30 days period trial without credit card required. Questions?'
             = link_to 'Contact us', '#',class: 'contact-modal'
       .row.charts
         .col-md-4
           .chart.first
             .plan-name
-              ='Free'
+              ='Bronze'
             .specs
               .spec
                 %span.variable
-                  = '2.5K'
-                = 'Execution Tasks'
-              .spec
-                %span.variable
-                  = '20 min'
-                = 'Polling Cycle'
-              .spec
-                %span.variable
-                  = '7 days'
-                = 'Flow History'
+                  = '15 USD'
+                = 'basic plan'
               .spec
                 %span.variable
                   ='Community'
-                ='Slack Channel'
+                ='slack channel'
               .spec
-                = 'No Credit Card Required'
+                %span.variable
+                  ='No'
+                ='specific support'
             =link_to '#', class:'button go-sign-in' do
-              %span='Start free'
+              %span='Start now'
         .col-md-4
           .chart.featured
-            = image_tag 'cenit/home/ribbon.png', class: 'popular', title: 'Pay As You Go'
-            %span.ribbon-text
-              = 'Pay As You Go'
             .plan-name
-              ='Small Business'
+              ='Silver'
             .specs
               .spec
                 %span.variable
-                  = '$15'
-                = 'per 5K Execution Tasks'
-              .spec
-                %span.variable
-                  = '10 min'
-                = 'Polling Cycle'
-              .spec
-                %span.variable
-                  = '30 days'
-                = 'Flow History'
+                  = '49 USD'
+                = 'start-up plan'
               .spec
                 %span.variable
                   = '5 hours'
-                = 'Assisted Setup'
+                = 'assisted setup'
               .spec
                 %span.variable
                   ='Private'
-                ='Slack Channel'
+                ='slack channel'
+              .spec
+                %span.variable
+                  ='48 hrs'
+                ='support window'
             =link_to '#', class:'button go-sign-in' do
-              %span='Start'
+              %span='Start now'
         .col-md-4
-          .chart.last
+          .chart.featured
             .plan-name
-              = 'Enterprise'
+              = 'Golden'
             .specs
               .spec
                 %span.variable
-                  = 'Custom'
-                = 'Execution Tasks'
+                  = '99 USD'
+                = 'growth up plan'
               .spec
                 %span.variable
-                  = '5 min'
-                = 'Polling Cycle'
+                  = 'Unlimited'
+                = 'assisted setup'
+              .spec
+                %span.variable
+                  ='Private'
+                ='slack channel'
+              .spec
+                %span.variable
+                  ='ASAP'
+                ='priority support'
+            =link_to '#', class:'button go-sign-in' do
+              %span='Start now'
+        .col-md-4
+          .chart.last
+            .plan-name
+              = 'Custom'
+            .specs
+              .spec
+                %span.variable
+                  = 'On-premise'
+                = 'white label Cenit server'
               .spec
                 %span.variable
                   = 'Custom'
-                = 'Flow History'
+                = 'development services'
               .spec
                 %span.variable
-                  = 'Custom'
-                = 'Development Services'
+                  ='Private'
+                ='slack channel'
               .spec
                 %span.variable
                   = 'Dedicated'
